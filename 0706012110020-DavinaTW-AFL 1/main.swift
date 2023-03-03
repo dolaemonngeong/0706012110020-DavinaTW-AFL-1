@@ -162,16 +162,16 @@ func checkout(){
     var pay:String = ""
     pay = readLine()!
     var payInt = Int(pay)
-    var totalOrder: Int
+    var totalOrder: Int = 0
     print("""
         Your total order: \(totalOrder)
         Enter the amount of your money: \(pay)
         """)
-    if(totalOrder < payInt){
-        print("You pay: \(pay) Change: \(payInt - totalOrder)")
-    }else{
+//    if(totalOrder < payInt){
+//        print("You pay: \(pay) Change: \(payInt - totalOrder)")
+//    }else{
         print("Please enter your money")
-    }
+//    }
     //}while totalOrder > pay
 }
 
