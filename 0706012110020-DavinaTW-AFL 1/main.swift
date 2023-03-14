@@ -44,64 +44,25 @@ func mainDisplay(){
     switch cafeteriaInput {
     case "1":
         print("Choosing Tuku-Tuku...")
-        cafeteriaChoosen["1"] = "Tuku-tuku"
         inCafeteria(nameCafeteria: "Tuku-tuku")
         
     case "2":
-        //    cafeteriaInput.append("Gotri")
         print("Choosing Gotri...")
-        cafeteriaChoosen["2"] = "Gotri"
+
         inCafeteria(nameCafeteria: "Gotri")
     case "3":
-//        cafeteriaInput.append("Madam Lie")
         print("Choosing Madam Lie...")
-        cafeteriaChoosen["3"] = "Madam Lie"
+
         inCafeteria(nameCafeteria: "Madam Lie")
-        //cafeteria screen (madam lie)
-//        var choiceMenuMadamLie: String = ""
-//        print("""
-//                    Hi, welcome back to Madam Lie!
-//                    What would you like to order?
-//
-//
-//                    -
-//                    [B]ack to Main Menu
-//                    Your menu choice? \(choiceMenuMadamLie)
-//                    """)
-//        choiceMenuMadamLie = readLine()!
     case "4":
-//        cafeteriaInput.append("Kopte")
-        //cafeteria screen (Kopte)
-        cafeteriaChoosen["2"] = "Kopte"
         inCafeteria(nameCafeteria: "Kopte")
-//        var choiceMenuKopte: String = ""
-//        print("""
-//                    Hi, welcome back to Kopte!
-//                    What would you like to order?
-//
-//                    [1] Teh Tarik Kopte
-//                    [2] Coklat Tarik
-//                    [3] Teh Kundur
-//                    [4] Teh Jeruk Nipis
-//                    [5] Milo Dinosaur
-//                    -
-//                    [B]ack to Main Menu
-//                    Your menu choice? \(choiceMenuKopte)
-//                    """)
-//        choiceMenuKopte = readLine()!
     case "s", "S":
         print("Here's your shopping cartnya :)")
         if cafeteriaChoosen.isEmpty{
             shoppingcart(cafeteriaChoosen: [:])
         }else{
             print(cafeteriaChoosen)
-            
             shoppingcart(cafeteriaChoosen: cafeteriaChoosen)
-//            for (numberCafeteria, cafeteriaName) in cafeteriaChoosen{
-//                shoppingcart(cafeteriaChoosen: [numberCafeteria : cafeteriaName])
-//                print("this is \(shoppingcart(cafeteriaChoosen: [numberCafeteria : cafeteriaName]))")
-//            }
-            
         }
 
     case "q","Q":
@@ -138,13 +99,16 @@ func inCafeteria(nameCafeteria:String){
         choiceMenuTuku2 = readLine()!
         switch choiceMenuTuku2{
         case "1":
-            //        var menu = "Tahu Isi"
+            cafeteriaChoosen["1"] = "Tuku-tuku"
             orderInTuku2(menu:"Tahu Isi")
         case "2":
+            cafeteriaChoosen["1"] = "Tuku-tuku"
             orderInTuku2(menu: "Nasi Kuning")
         case "3":
+            cafeteriaChoosen["1"] = "Tuku-tuku"
             orderInTuku2(menu: "Nasi Campur")
         case "4":
+            cafeteriaChoosen["1"] = "Tuku-tuku"
             orderInTuku2(menu: "Air Mineral")
         case "b","B":
             mainDisplay()
@@ -169,16 +133,22 @@ func inCafeteria(nameCafeteria:String){
         choiceMenuGotri = readLine()!
         switch choiceMenuGotri{
         case "1":
+            cafeteriaChoosen["2"] = "Gotri"
             orderInGotri(menu:"Nasi Bakar")
         case "2":
+            cafeteriaChoosen["2"] = "Gotri"
             orderInGotri(menu: "Nasi Goreng")
         case "3":
+            cafeteriaChoosen["2"] = "Gotri"
             orderInGotri(menu: "Mie Goreng")
         case "4":
+            cafeteriaChoosen["2"] = "Gotri"
             orderInGotri(menu: "Tamie Goreng")
         case "5":
+            cafeteriaChoosen["2"] = "Gotri"
             orderInGotri(menu: "Milkshake")
         case "6":
+            cafeteriaChoosen["2"] = "Gotri"
             orderInGotri(menu: "Air Mineral")
         case "b","B":
             mainDisplay()
@@ -190,11 +160,11 @@ func inCafeteria(nameCafeteria:String){
         var choiceMenuMadamLie: String = ""
         
         print("""
-                    [1] Ayam Geprek Dada
-                    [2] Ayam Geprek Paha
-                    [3] Nasi Putih
-                    [4] Teh Tawar
-                    [5] Jeruk Manis
+            [1] Ayam Geprek Dada
+            [2] Ayam Geprek Paha
+            [3] Nasi Putih
+            [4] Teh Tawar
+            [5] Jeruk Manis
             -
             [B]ack to Main Menu
             Your menu choice? \(choiceMenuMadamLie)
@@ -202,14 +172,19 @@ func inCafeteria(nameCafeteria:String){
         choiceMenuMadamLie = readLine()!
         switch choiceMenuMadamLie{
         case "1":
+            cafeteriaChoosen["3"] = "Madam Lie"
             orderInMadamLie(menu:"Ayam Geprek Dada")
         case "2":
+            cafeteriaChoosen["3"] = "Madam Lie"
             orderInMadamLie(menu: "Ayam Geprek Paha")
         case "3":
+            cafeteriaChoosen["3"] = "Madam Lie"
             orderInMadamLie(menu: "Nasi Putih")
         case "4":
+            cafeteriaChoosen["3"] = "Madam Lie"
             orderInMadamLie(menu: "Teh Tawar")
         case "5":
+            cafeteriaChoosen["3"] = "Madam Lie"
             orderInMadamLie(menu: "Jeruk Manis")
         case "b","B":
             mainDisplay()
@@ -221,11 +196,11 @@ func inCafeteria(nameCafeteria:String){
         var choiceMenuKopte: String = ""
         
         print("""
-                            [1] Teh Tarik Kopte
-                            [2] Coklat Tarik
-                            [3] Teh Kundur
-                            [4] Teh Jeruk Nipis
-                            [5] Milo Dinosaur
+            [1] Teh Tarik Kopte
+            [2] Coklat Tarik
+            [3] Teh Kundur
+            [4] Teh Jeruk Nipis
+            [5] Milo Dinosaur
             -
             [B]ack to Main Menu
             Your menu choice? \(choiceMenuKopte)
@@ -233,14 +208,19 @@ func inCafeteria(nameCafeteria:String){
         choiceMenuKopte = readLine()!
         switch choiceMenuKopte{
         case "1":
+            cafeteriaChoosen["4"] = "Kopte"
             orderInKopte(menu:"Teh Tarik Kopte")
         case "2":
+            cafeteriaChoosen["4"] = "Kopte"
             orderInKopte(menu: "Coklat Tarik")
         case "3":
+            cafeteriaChoosen["4"] = "Kopte"
             orderInKopte(menu: "Teh Kundur")
         case "4":
+            cafeteriaChoosen["4"] = "Kopte"
             orderInKopte(menu: "Teh Jeruh Nipis")
         case "5":
+            cafeteriaChoosen["4"] = "Kopte"
             orderInKopte(menu: "Milo Dinosaur")
         case "b","B":
             mainDisplay()
@@ -252,10 +232,10 @@ func inCafeteria(nameCafeteria:String){
 }
 
 func orderInTuku2(menu: String){
-    var priceTuku2 = ["Tahu Isi" : 5000,
-                      "Nasi Kuning" : 15000,
-                      "Nasi Campur" : 16000,
-                      "Air Mineral" : 3000]
+    var priceTuku2 = ["Tahu Isi" : 5_000,
+                      "Nasi Kuning" : 15_000,
+                      "Nasi Campur" : 16_000,
+                      "Air Mineral" : 3_000]
 
     var amountBuyString: String = ""
     
@@ -284,18 +264,16 @@ func orderInTuku2(menu: String){
 //            print(total)
         }
     }
-//    var totalan = Int(amountBuyInt * priceTuku2.index(menu))
-//    print(totalan)
     mainDisplay()
 }
 
 func orderInGotri(menu: String){
-    var priceGotri = ["Nasi Bakar": 13000,
-                      "Nasi Goreng":13500,
-                      "Mie Goreng":14000,
-                      "Tamie Goreng":15000,
-                      "Milkshake": 10000,
-                      "Tahu Berintik":9000]
+    var priceGotri = ["Nasi Bakar": 13_000,
+                      "Nasi Goreng":13_500,
+                      "Mie Goreng":14_000,
+                      "Tamie Goreng":15_000,
+                      "Milkshake": 10_000,
+                      "Tahu Berintik":9_000]
 
     var amountBuyString: String = ""
     
@@ -323,11 +301,11 @@ func orderInGotri(menu: String){
 }
 
 func orderInMadamLie(menu: String){
-    var priceMadamLie = ["Ayam Geprek Dada": 11000,
-                         "Ayam Geprek Paha": 11000,
-                         "Nasi Putih": 6000,
-                         "Teh Tawar": 5000,
-                         "Jeruk Manis": 5500]
+    var priceMadamLie = ["Ayam Geprek Dada": 11_000,
+                         "Ayam Geprek Paha": 11_000,
+                         "Nasi Putih": 6_000,
+                         "Teh Tawar": 5_000,
+                         "Jeruk Manis": 5_500]
 
     var amountBuyString: String = ""
     
@@ -351,8 +329,6 @@ func orderInMadamLie(menu: String){
         }
     }
     mainDisplay()
-//    var totalan = Int(amountBuyInt * priceTuku2.index(menu))
-//    print(totalan)
 }
 
 func orderInKopte(menu: String){
@@ -409,25 +385,6 @@ func shoppingcart(cafeteriaChoosen: [String : String]){
         print(cafeteriaChoosen)
         for cafeteriaName in cafeteriaChoosen.values{
             print("\(cafeteriaName) tess")
-//            if(cafeteriaName == "Tuku-tuku" || cafeteriaName == "Gotri" || cafeteriaName == "Madam Lie" || cafeteriaName == "Kopte"){
-////                print("Your order from \(cafeteriaName) :")
-//                for (nama, jumlah) in ordersTuku2{
-//                    print("Your order from \(cafeteriaName) :")
-//                    print("- \(nama) x \(jumlah)")
-//                }
-//                for (nama, jumlah) in ordersGotri{
-//                    print("Your order from \(cafeteriaName) :")
-//                    print("- \(nama) x \(jumlah)")
-//                }
-//                for (nama, jumlah) in ordersMadamLie{
-//                    print("Your order from \(cafeteriaName) :")
-//                    print("- \(nama) x \(jumlah)")
-//                }
-//                for (nama, jumlah) in ordersKopte{
-//                    print("Your order from \(cafeteriaName) :")
-//                    print("- \(nama) x \(jumlah)")
-//                }
-//            }
             if(cafeteriaName == "Tuku-tuku"){
                 print("Your order from \(cafeteriaName) :")
                 for (nama, jumlah) in ordersTuku2{
@@ -477,20 +434,24 @@ func checkout(){
     //chekout screen
     
     var pay:String = ""
-    var payInt = Int(pay) ?? 0
+    var payInt:Int = 0
     
-    repeat{
+    while total > payInt{
     
         print("""
             Your total order: \(total)
-            Enter the amount of your money: \(pay)
+            Enter the amount of your money:
             """)
         pay = readLine()!
-        if(total <= payInt){
-            print("You pay: \(pay) Change: \(payInt - total)")
-        }else{
+        payInt = Int(pay) ?? 0
+        if(total > payInt){
             print("Please enter your money")
         }
-    }while total >= payInt
+//        print("\(pay) ini pay biasa")
+//        print("\(payInt) ini pay int")
+    }
+    if(total < payInt){
+        print("You pay: \(pay) Change: \(payInt - total)")
+    }
 }
 
