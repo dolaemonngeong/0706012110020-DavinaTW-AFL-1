@@ -13,13 +13,16 @@ var ordersGotri: [String:String] = [:]
 var ordersMadamLie: [String:String] = [:]
 var ordersKopte: [String:String] = [:]
 var total: Int = 0
+var falseInput:Int = 0
 
 var cafeteriaChoosen: [String : String] = [:]
+
+var cafeteriaInput: String = ""
 
 mainDisplay()
 
 func mainDisplay(){
-    var cafeteriaInput: String = ""
+
     
     print("""
     Welcome to UC-Walk Cafeteria
@@ -34,7 +37,7 @@ func mainDisplay(){
     [Q]uit
     """)
     
-    print("Your cafeteria choice? \(cafeteriaInput)")
+    print("Your cafeteria choice?")
     
     cafeteriaInput = readLine()!
     
@@ -67,7 +70,6 @@ func mainDisplay(){
     case "q","Q":
         print("See u next time! :)")
         exit(0)
-        
     default:
         print("""
             Please Input from the option bellow!
@@ -79,184 +81,216 @@ func mainDisplay(){
 
 
 func inCafeteria(nameCafeteria:String){
+    repeat{
+        print("""
+                Hi, welcome back to \(nameCafeteria)!
+                What would you like to order?
+            """)
+        
+        if nameCafeteria == "Tuku-tuku"{
+            var choiceMenuTuku2: String = ""
+            
+            print("""
+                [1] Tahu Isi
+                [2] Nasi Kuning
+                [3] Nasi Campur
+                [4] Air Mineral
+                -
+                [B]ack to Main Menu
+                Your menu choice? \(choiceMenuTuku2)
+            """)
+            
+            choiceMenuTuku2 = readLine()!
+            
+            switch choiceMenuTuku2{
+            case "1":
+                falseInput = 0
+                cafeteriaChoosen["1"] = "Tuku-tuku"
+                orderMenu(menu: "Tahu Isi", nameCafeteria: "Tuku-tuku")
+    //            orderInTuku2(menu:"Tahu Isi")
+            case "2":
+                falseInput = 0
+                cafeteriaChoosen["1"] = "Tuku-tuku"
+                orderMenu(menu: "Nasi Kuning", nameCafeteria: "Tuku-tuku")
+    //            orderInTuku2(menu: "Nasi Kuning")
+            case "3":
+                falseInput = 0
+                cafeteriaChoosen["1"] = "Tuku-tuku"
+                orderMenu(menu: "Nasi Campur", nameCafeteria: "Tuku-tuku")
+    //            orderInTuku2(menu: "Nasi Campur")
+            case "4":
+                falseInput = 0
+                cafeteriaChoosen["1"] = "Tuku-tuku"
+                orderMenu(menu: "Air Mineral", nameCafeteria: "Tuku-tuku")
+    //            orderInTuku2(menu: "Air Mineral")
+            case "b","B":
+                falseInput = 0
+                mainDisplay()
+            default:
+                falseInput += 1
+//                inCafeteria(nameCafeteria: "Tuku-tuku")
+            }
+        }
+        if nameCafeteria == "Gotri"{
+            var choiceMenuGotri: String = ""
+            
+            print("""
+                [1] Nasi Bakar
+                [2] Nasi Goreng
+                [3] Mie Goreng
+                [4] Tamie Goreng
+                [5] Milkshake
+                [6] Tahu Berintik
+                -
+                [B]ack to Main Menu
+                Your menu choice? \(choiceMenuGotri)
+            """)
+            
+            choiceMenuGotri = readLine()!
+            
+            switch choiceMenuGotri{
+            case "1":
+                falseInput = 0
+                cafeteriaChoosen["2"] = "Gotri"
+                orderMenu(menu: "Nasi Bakar", nameCafeteria: "Gotri")
+                
+            case "2":
+                falseInput = 0
+                cafeteriaChoosen["2"] = "Gotri"
+                orderMenu(menu: "Nasi Goreng", nameCafeteria: "Gotri")
+                
+            case "3":
+                falseInput = 0
+                cafeteriaChoosen["2"] = "Gotri"
+                orderMenu(menu: "Mie Goreng", nameCafeteria: "Gotri")
+                
+            case "4":
+                falseInput = 0
+                cafeteriaChoosen["2"] = "Gotri"
+                orderMenu(menu: "Tamie Goreng", nameCafeteria: "Gotri")
+                
+            case "5":
+                falseInput = 0
+                cafeteriaChoosen["2"] = "Gotri"
+                orderMenu(menu: "Milkshake", nameCafeteria: "Gotri")
+                
+            case "6":
+                falseInput = 0
+                cafeteriaChoosen["2"] = "Gotri"
+                orderMenu(menu: "Tahu Berintik", nameCafeteria: "Gotri")
+                
+            case "b","B":
+                falseInput = 0
+                mainDisplay()
+                
+            default:
+                falseInput += 1
+//                inCafeteria(nameCafeteria: "Gotri")
+            }
+        }
+        if nameCafeteria == "Madam Lie"{
+            var choiceMenuMadamLie: String = ""
+            
+            print("""
+                [1] Ayam Geprek Dada
+                [2] Ayam Geprek Paha
+                [3] Nasi Putih
+                [4] Teh Tawar
+                [5] Jeruk Manis
+                -
+                [B]ack to Main Menu
+                Your menu choice? \(choiceMenuMadamLie)
+            """)
+            
+            choiceMenuMadamLie = readLine()!
+            
+            switch choiceMenuMadamLie{
+            case "1":
+                falseInput = 0
+                cafeteriaChoosen["3"] = "Madam Lie"
+                orderMenu(menu: "Ayam Geprek Dada", nameCafeteria: "Madam Lie")
+                
+            case "2":
+                falseInput = 0
+                cafeteriaChoosen["3"] = "Madam Lie"
+                orderMenu(menu: "Ayam Geprek Paha", nameCafeteria: "Madam Lie")
+                
+            case "3":
+                falseInput = 0
+                cafeteriaChoosen["3"] = "Madam Lie"
+                orderMenu(menu: "Nasi Putih", nameCafeteria: "Madam Lie")
+                
+            case "4":
+                falseInput = 0
+                cafeteriaChoosen["3"] = "Madam Lie"
+                orderMenu(menu: "Teh Tawar", nameCafeteria: "Madam Lie")
+                
+            case "5":
+                falseInput = 0
+                cafeteriaChoosen["3"] = "Madam Lie"
+                orderMenu(menu: "Jeruk Manis", nameCafeteria: "Madam Lie")
+                
+            case "b","B":
+                falseInput = 0
+                mainDisplay()
+                
+            default:
+                falseInput += 1
+//                inCafeteria(nameCafeteria: "Madam Lie")
+            }
+        }
+        if nameCafeteria == "Kopte"{
+            var choiceMenuKopte: String = ""
+            
+            print("""
+                [1] Teh Tarik Kopte
+                [2] Coklat Tarik
+                [3] Teh Kundur
+                [4] Teh Jeruk Nipis
+                [5] Milo Dinosaur
+                -
+                [B]ack to Main Menu
+                Your menu choice? \(choiceMenuKopte)
+            """)
+            
+            choiceMenuKopte = readLine()!
+            
+            switch choiceMenuKopte{
+            case "1":
+                falseInput = 0
+                cafeteriaChoosen["4"] = "Kopte"
+                orderMenu(menu: "Teh Tarik Kopte", nameCafeteria: "Kopte")
+                
+            case "2":
+                falseInput = 0
+                cafeteriaChoosen["4"] = "Kopte"
+                orderMenu(menu: "Coklat Tarik", nameCafeteria: "Kopte")
+                
+            case "3":
+                falseInput = 0
+                cafeteriaChoosen["4"] = "Kopte"
+                orderMenu(menu: "Teh Kundur", nameCafeteria: "Kopte")
+                
+            case "4":
+                falseInput = 0
+                cafeteriaChoosen["4"] = "Kopte"
+                orderMenu(menu: "Teh Jeruk Nipis", nameCafeteria: "Kopte")
+                
+            case "5":
+                falseInput = 0
+                cafeteriaChoosen["4"] = "Kopte"
+                orderMenu(menu: "Milo Dinosaur", nameCafeteria: "Kopte")
+                
+            case "b","B":
+                falseInput = 0
+                mainDisplay()
+            default:
+                falseInput += 1
+//                inCafeteria(nameCafeteria: "Kopte")
+            }
+        }
+    }while falseInput > 0
     
-    print("""
-            Hi, welcome back to \(nameCafeteria)!
-            What would you like to order?
-        """)
-    
-    if nameCafeteria == "Tuku-tuku"{
-        var choiceMenuTuku2: String = ""
-        
-        print("""
-            [1] Tahu Isi
-            [2] Nasi Kuning
-            [3] Nasi Campur
-            [4] Air Mineral
-            -
-            [B]ack to Main Menu
-            Your menu choice? \(choiceMenuTuku2)
-        """)
-        
-        choiceMenuTuku2 = readLine()!
-        
-        switch choiceMenuTuku2{
-        case "1":
-            cafeteriaChoosen["1"] = "Tuku-tuku"
-            orderMenu(menu: "Tahu Isi", nameCafeteria: "Tuku-tuku")
-//            orderInTuku2(menu:"Tahu Isi")
-        case "2":
-            cafeteriaChoosen["1"] = "Tuku-tuku"
-            orderMenu(menu: "Nasi Kuning", nameCafeteria: "Tuku-tuku")
-//            orderInTuku2(menu: "Nasi Kuning")
-        case "3":
-            cafeteriaChoosen["1"] = "Tuku-tuku"
-            orderMenu(menu: "Nasi Campur", nameCafeteria: "Tuku-tuku")
-//            orderInTuku2(menu: "Nasi Campur")
-        case "4":
-            cafeteriaChoosen["1"] = "Tuku-tuku"
-            orderMenu(menu: "Air Mineral", nameCafeteria: "Tuku-tuku")
-//            orderInTuku2(menu: "Air Mineral")
-        case "b","B":
-            mainDisplay()
-        default:
-            inCafeteria(nameCafeteria: "Tuku-tuku")
-        }
-    }
-    if nameCafeteria == "Gotri"{
-        var choiceMenuGotri: String = ""
-        
-        print("""
-            [1] Nasi Bakar
-            [2] Nasi Goreng
-            [3] Mie Goreng
-            [4] Tamie Goreng
-            [5] Milkshake
-            [6] Tahu Berintik
-            -
-            [B]ack to Main Menu
-            Your menu choice? \(choiceMenuGotri)
-        """)
-        
-        choiceMenuGotri = readLine()!
-        
-        switch choiceMenuGotri{
-        case "1":
-            cafeteriaChoosen["2"] = "Gotri"
-            orderMenu(menu: "Nasi Bakar", nameCafeteria: "Gotri")
-//            orderInGotri(menu:"Nasi Bakar")
-        case "2":
-            cafeteriaChoosen["2"] = "Gotri"
-            orderMenu(menu: "Nasi Goreng", nameCafeteria: "Gotri")
-//            orderInGotri(menu: "Nasi Goreng")
-        case "3":
-            cafeteriaChoosen["2"] = "Gotri"
-            orderMenu(menu: "Mie Goreng", nameCafeteria: "Gotri")
-//            orderInGotri(menu: "Mie Goreng")
-        case "4":
-            cafeteriaChoosen["2"] = "Gotri"
-            orderMenu(menu: "Tamie Goreng", nameCafeteria: "Gotri")
-//            orderInGotri(menu: "Tamie Goreng")
-        case "5":
-            cafeteriaChoosen["2"] = "Gotri"
-            orderMenu(menu: "Milkshake", nameCafeteria: "Gotri")
-//            orderInGotri(menu: "Milkshake")
-        case "6":
-            cafeteriaChoosen["2"] = "Gotri"
-            orderMenu(menu: "Air Mineral", nameCafeteria: "Gotri")
-//            orderInGotri(menu: "Air Mineral")
-        case "b","B":
-            mainDisplay()
-        default:
-            inCafeteria(nameCafeteria: "Gotri")
-        }
-    }
-    if nameCafeteria == "Madam Lie"{
-        var choiceMenuMadamLie: String = ""
-        
-        print("""
-            [1] Ayam Geprek Dada
-            [2] Ayam Geprek Paha
-            [3] Nasi Putih
-            [4] Teh Tawar
-            [5] Jeruk Manis
-            -
-            [B]ack to Main Menu
-            Your menu choice? \(choiceMenuMadamLie)
-        """)
-        
-        choiceMenuMadamLie = readLine()!
-        
-        switch choiceMenuMadamLie{
-        case "1":
-            cafeteriaChoosen["3"] = "Madam Lie"
-            orderMenu(menu: "Ayam Geprek Dada", nameCafeteria: "Madam Lie")
-//            orderInMadamLie(menu:"Ayam Geprek Dada")
-        case "2":
-            cafeteriaChoosen["3"] = "Madam Lie"
-            orderMenu(menu: "Ayam Geprek Paha", nameCafeteria: "Madam Lie")
-//            orderInMadamLie(menu: "Ayam Geprek Paha")
-        case "3":
-            cafeteriaChoosen["3"] = "Madam Lie"
-            orderMenu(menu: "Nasi Putih", nameCafeteria: "Madam Lie")
-//            orderInMadamLie(menu: "Nasi Putih")
-        case "4":
-            cafeteriaChoosen["3"] = "Madam Lie"
-            orderMenu(menu: "Teh Tawar", nameCafeteria: "Madam Lie")
-//            orderInMadamLie(menu: "Teh Tawar")
-        case "5":
-            cafeteriaChoosen["3"] = "Madam Lie"
-            orderMenu(menu: "Jeruk Manis", nameCafeteria: "Madam Lie")
-//            orderInMadamLie(menu: "Jeruk Manis")
-        case "b","B":
-            mainDisplay()
-        default:
-            inCafeteria(nameCafeteria: "Madam Lie")
-        }
-    }
-    if nameCafeteria == "Kopte"{
-        var choiceMenuKopte: String = ""
-        
-        print("""
-            [1] Teh Tarik Kopte
-            [2] Coklat Tarik
-            [3] Teh Kundur
-            [4] Teh Jeruk Nipis
-            [5] Milo Dinosaur
-            -
-            [B]ack to Main Menu
-            Your menu choice? \(choiceMenuKopte)
-        """)
-        
-        choiceMenuKopte = readLine()!
-        
-        switch choiceMenuKopte{
-        case "1":
-            cafeteriaChoosen["4"] = "Kopte"
-            orderMenu(menu: "Teh Tarik Kopte", nameCafeteria: "Kopte")
-//            orderInKopte(menu:"Teh Tarik Kopte")
-        case "2":
-            cafeteriaChoosen["4"] = "Kopte"
-            orderMenu(menu: "Coklat Tarik", nameCafeteria: "Kopte")
-//            orderInKopte(menu: "Coklat Tarik")
-        case "3":
-            cafeteriaChoosen["4"] = "Kopte"
-            orderMenu(menu: "Teh Kundur", nameCafeteria: "Kopte")
-//            orderInKopte(menu: "Teh Kundur")
-        case "4":
-            cafeteriaChoosen["4"] = "Kopte"
-            orderMenu(menu: "Teh Jeruk Nipis", nameCafeteria: "Kopte")
-//            orderInKopte(menu: "Teh Jeruh Nipis")
-        case "5":
-            cafeteriaChoosen["4"] = "Kopte"
-            orderMenu(menu: "Milo Dinosaur", nameCafeteria: "Kopte")
-//            orderInKopte(menu: "Milo Dinosaur")
-        case "b","B":
-            mainDisplay()
-        default:
-            inCafeteria(nameCafeteria: "Kopte")
-        }
-    }
 
 }
 
@@ -343,14 +377,15 @@ func calculateOrder(menu: String, priceMenuCafeteria: [String:Int], nameCafeteri
             }
             
             print("Thank you for ordering. :)")
+            print("")
             mainDisplay()
         } else {
             print("Invalid input. Please enter a number!")
+            print("")
         }
     }
 }
 
-var falseInput:Int = 0
 
 func shoppingcart(cafeteriaChoosen: [String : String]){
     //shopping cart screen
@@ -427,21 +462,18 @@ func checkout(){
             """)
         pay = readLine()!
         payInt = Int(pay) ?? 0
-        print(pay)
         
         if pay == ""{
             falseInput += 1
             print("Please enter your payment.")
+        }else if pay == "0"{
+            falseInput += 1
+            print("Payment can't be zero.")
+        }else if(total > payInt || payInt < 0){
+            falseInput += 1
+            print("Please enter a valid amount.")
         }else {
-            if payInt == 0{
-                falseInput += 1
-                print("Payment can't be zero.")
-            }else if(total > payInt || payInt < 0){
-                falseInput += 1
-                print("Please enter a valid amount.")
-            }else {
-                falseInput = 0
-            }
+            falseInput = 0
         }
     }while falseInput > 0
     
@@ -460,6 +492,7 @@ func checkout(){
             mainDisplay()
         }else{
             falseInput += 1
+            print("Your input is invalid")
         }
     }while falseInput > 0
 
