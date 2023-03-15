@@ -8,11 +8,17 @@
 import Foundation
 
 var mainScreen: String = ""
+
 var ordersTuku2: [String:String] = [:]
+
 var ordersGotri: [String:String] = [:]
+
 var ordersMadamLie: [String:String] = [:]
+
 var ordersKopte: [String:String] = [:]
+
 var total: Int = 0
+
 var falseInput:Int = 0
 
 var cafeteriaChoosen: [String : String] = [:]
@@ -23,7 +29,6 @@ mainDisplay()
 
 func mainDisplay(){
 
-    
     print("""
     Welcome to UC-Walk Cafeteria
     Please choose cafeteria:
@@ -63,13 +68,13 @@ func mainDisplay(){
         if cafeteriaChoosen.isEmpty{
             shoppingcart(cafeteriaChoosen: [:])
         }else{
-//            print(cafeteriaChoosen)
             shoppingcart(cafeteriaChoosen: cafeteriaChoosen)
         }
 
     case "q","Q":
         print("See u next time! :)")
         exit(0)
+        
     default:
         print("""
             Please Input from the option bellow!
@@ -81,7 +86,9 @@ func mainDisplay(){
 
 
 func inCafeteria(nameCafeteria:String){
+    
     repeat{
+        
         print("""
                 Hi, welcome back to \(nameCafeteria)!
                 What would you like to order?
@@ -103,35 +110,39 @@ func inCafeteria(nameCafeteria:String){
             choiceMenuTuku2 = readLine()!
             
             switch choiceMenuTuku2{
+                
             case "1":
                 falseInput = 0
                 cafeteriaChoosen["1"] = "Tuku-tuku"
                 orderMenu(menu: "Tahu Isi", nameCafeteria: "Tuku-tuku")
-    //            orderInTuku2(menu:"Tahu Isi")
+                
             case "2":
                 falseInput = 0
                 cafeteriaChoosen["1"] = "Tuku-tuku"
                 orderMenu(menu: "Nasi Kuning", nameCafeteria: "Tuku-tuku")
-    //            orderInTuku2(menu: "Nasi Kuning")
+                
             case "3":
                 falseInput = 0
                 cafeteriaChoosen["1"] = "Tuku-tuku"
                 orderMenu(menu: "Nasi Campur", nameCafeteria: "Tuku-tuku")
-    //            orderInTuku2(menu: "Nasi Campur")
+                
             case "4":
                 falseInput = 0
                 cafeteriaChoosen["1"] = "Tuku-tuku"
                 orderMenu(menu: "Air Mineral", nameCafeteria: "Tuku-tuku")
-    //            orderInTuku2(menu: "Air Mineral")
+                
             case "b","B":
                 falseInput = 0
                 mainDisplay()
+                
             default:
                 falseInput += 1
-//                inCafeteria(nameCafeteria: "Tuku-tuku")
             }
+            
         }
+        
         if nameCafeteria == "Gotri"{
+            
             var choiceMenuGotri: String = ""
             
             print("""
@@ -149,6 +160,7 @@ func inCafeteria(nameCafeteria:String){
             choiceMenuGotri = readLine()!
             
             switch choiceMenuGotri{
+                
             case "1":
                 falseInput = 0
                 cafeteriaChoosen["2"] = "Gotri"
@@ -185,10 +197,11 @@ func inCafeteria(nameCafeteria:String){
                 
             default:
                 falseInput += 1
-//                inCafeteria(nameCafeteria: "Gotri")
             }
         }
+        
         if nameCafeteria == "Madam Lie"{
+            
             var choiceMenuMadamLie: String = ""
             
             print("""
@@ -205,6 +218,7 @@ func inCafeteria(nameCafeteria:String){
             choiceMenuMadamLie = readLine()!
             
             switch choiceMenuMadamLie{
+                
             case "1":
                 falseInput = 0
                 cafeteriaChoosen["3"] = "Madam Lie"
@@ -236,10 +250,11 @@ func inCafeteria(nameCafeteria:String){
                 
             default:
                 falseInput += 1
-//                inCafeteria(nameCafeteria: "Madam Lie")
             }
         }
+        
         if nameCafeteria == "Kopte"{
+            
             var choiceMenuKopte: String = ""
             
             print("""
@@ -256,6 +271,7 @@ func inCafeteria(nameCafeteria:String){
             choiceMenuKopte = readLine()!
             
             switch choiceMenuKopte{
+                
             case "1":
                 falseInput = 0
                 cafeteriaChoosen["4"] = "Kopte"
@@ -286,15 +302,14 @@ func inCafeteria(nameCafeteria:String){
                 mainDisplay()
             default:
                 falseInput += 1
-//                inCafeteria(nameCafeteria: "Kopte")
             }
         }
     }while falseInput > 0
     
-
 }
 
 func orderMenu(menu: String, nameCafeteria: String){
+    
     let priceTuku2 = ["Tahu Isi" : 5_000,
                       "Nasi Kuning" : 15_000,
                       "Nasi Campur" : 16_000,
@@ -369,7 +384,6 @@ func calculateOrder(menu: String, priceMenuCafeteria: [String:Int], nameCafeteri
                 ordersKopte[menu] = amountMenuString
             }
 
-//            print(ordersTuku2)
             for (name, price) in priceMenuCafeteria{
                 if menu == name{
                     total += price * amountMenuInt
@@ -388,61 +402,73 @@ func calculateOrder(menu: String, priceMenuCafeteria: [String:Int], nameCafeteri
 
 
 func shoppingcart(cafeteriaChoosen: [String : String]){
-    //shopping cart screen
+    
     var choiceShopCart: String = ""
+    
     if cafeteriaChoosen.isEmpty{
         print("Your cart is empty. :(")
         mainDisplay()
     }else{
 
         repeat {
-//            print(cafeteriaChoosen)
+            
             for cafeteriaName in cafeteriaChoosen.values{
-//                print("\(cafeteriaName) tess")
+                
                 if(cafeteriaName == "Tuku-tuku"){
                     print("Your order from \(cafeteriaName) :")
                     for (nama, jumlah) in ordersTuku2{
                         print("- \(nama) x \(jumlah)")
                     }
                 }
+                
                 if(cafeteriaName == "Gotri"){
                     print("Your order from \(cafeteriaName) :")
                     for (nama, jumlah) in ordersGotri{
                         print("- \(nama) x \(jumlah)")
                     }
                 }
+                
                 if(cafeteriaName == "Madam Lie"){
                     print("Your order from \(cafeteriaName) :")
                     for (nama, jumlah) in ordersMadamLie{
                         print("- \(nama) x \(jumlah)")
                     }
                 }
+                
                 if(cafeteriaName == "Kopte"){
                     print("Your order from \(cafeteriaName) :")
                     for (nama, jumlah) in ordersKopte{
                         print("- \(nama) x \(jumlah)")
                     }
                 }
+                
             }
+            
             print("""
                     
                     Press [B] to go back
                     Press [P] to pay / checkout
                     Your choice? \(choiceShopCart)
                     """)
+            
             choiceShopCart = readLine()!
+            
             switch(choiceShopCart){
+                
             case "b","B":
                 falseInput = 0
                 print("back to the main menu ..")
                 mainDisplay()
+                
             case "p","P":
                 falseInput = 0
                 checkout()
+                
             default:
                 print("Input the corect option!")
                 falseInput += 1
             }
+            
         }while falseInput > 0
         
     }
@@ -485,6 +511,7 @@ func checkout(){
                   
                 Press [y] to go back to main screen:
             """)
+        
         var backMainScreen: String = readLine()!
         
         if(backMainScreen == "y" || backMainScreen == "Y"){
