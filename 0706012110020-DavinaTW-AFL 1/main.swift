@@ -9,13 +9,13 @@ import Foundation
 
 var mainScreen: String = ""
 
-var ordersTuku2: [String:String] = [:]
+var ordersTuku2: [String:Int] = [:]
 
-var ordersGotri: [String:String] = [:]
+var ordersGotri: [String:Int] = [:]
 
-var ordersMadamLie: [String:String] = [:]
+var ordersMadamLie: [String:Int] = [:]
 
-var ordersKopte: [String:String] = [:]
+var ordersKopte: [String:Int] = [:]
 
 var total: Int = 0
 
@@ -375,13 +375,37 @@ func calculateOrder(menu: String, priceMenuCafeteria: [String:Int], nameCafeteri
             num = amountMenuInt
             
             if nameCafeteria == "Tuku-tuku"{
-                ordersTuku2[menu] = amountMenuString
+                
+                if ordersTuku2[menu] != nil{
+                    ordersTuku2[menu]! += amountMenuInt
+                }else{
+                    ordersTuku2[menu] = amountMenuInt
+                }
+                
             }else if nameCafeteria == "Madam Lie"{
-                ordersMadamLie[menu] = amountMenuString
+                
+                if ordersMadamLie[menu] != nil{
+                    ordersMadamLie[menu]! += amountMenuInt
+                }else{
+                    ordersMadamLie[menu] = amountMenuInt
+                }
+                
             }else if nameCafeteria == "Gotri"{
-                ordersGotri[menu] = amountMenuString
+                
+                if ordersGotri[menu] != nil{
+                    ordersGotri[menu]! += amountMenuInt
+                }else{
+                    ordersGotri[menu] = amountMenuInt
+                }
+                
             }else if nameCafeteria == "Kopte"{
-                ordersKopte[menu] = amountMenuString
+                
+                if ordersKopte[menu] != nil{
+                    ordersKopte[menu]! += amountMenuInt
+                }else{
+                    ordersKopte[menu] = amountMenuInt
+                }
+                
             }
 
             for (name, price) in priceMenuCafeteria{
