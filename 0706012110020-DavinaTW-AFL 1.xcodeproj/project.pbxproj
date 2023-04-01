@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0457AD5C29AD9E5200A45DF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457AD5B29AD9E5200A45DF8 /* main.swift */; };
+		04EF430A29D803D100D2C4DB /* Cafeteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF430929D803D100D2C4DB /* Cafeteria.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		0457AD5829AD9E5200A45DF8 /* 0706012110020-DavinaTW-AFL 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "0706012110020-DavinaTW-AFL 1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0457AD5B29AD9E5200A45DF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		04EF430929D803D100D2C4DB /* Cafeteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafeteria.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				0457AD5B29AD9E5200A45DF8 /* main.swift */,
+				04EF430929D803D100D2C4DB /* Cafeteria.swift */,
 			);
 			path = "0706012110020-DavinaTW-AFL 1";
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EF430A29D803D100D2C4DB /* Cafeteria.swift in Sources */,
 				0457AD5C29AD9E5200A45DF8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
