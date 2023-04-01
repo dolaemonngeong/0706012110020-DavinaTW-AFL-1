@@ -38,83 +38,83 @@ var falseInput:Int = 0
 //var cafeteriaInput: String = ""
 var t: String = ""
 //panggil fungsi main display untuk menampilkan halaman utamanya
-//mainDisplay()
+mainDisplay()
 
 // fungsi untuk menampilkan halaman utamanya
 func mainDisplay(){
-    print("a")
+    repeat{
+        print("""
+        Welcome to UC-Walk Cafeteria
+        Please choose cafeteria:
+
+        [1] Tuku-Tuku
+        [2] Gotri
+        [3] Madam Lie
+        [4] Kopte
+
+        [S]hopping Cart
+        [Q]uit
+        """)
+
+        print("Your cafeteria choice?")
+
+        //ambil yang user input
+        let cafeteriaInput = readLine()!
+
+        // opsi untuk mengarahkan user dari inputnya
+        switch cafeteriaInput {
+            
+        // menampilkan halaman Tuku-tuku
+        case "1":
+            falseInput = 0
+            print("Choosing Tuku-Tuku...")
+            print()
+            cafeteria.inCafeteria(nameCafeteria: "Tuku-tuku")
+
+        // menampilkan halaman Gotri
+        case "2":
+            falseInput = 0
+            print("Choosing Gotri...")
+            print()
+            cafeteria.inCafeteria(nameCafeteria: "Gotri")
+
+        // menampilkan halaman Madam Lie
+        case "3":
+            falseInput = 0
+            print("Choosing Madam Lie...")
+            print()
+            cafeteria.inCafeteria(nameCafeteria: "Madam Lie")
+            
+        // menampilkan halaman Kopte
+        case "4":
+            falseInput = 0
+            print("Choosing Kopte...")
+            print()
+            cafeteria.inCafeteria(nameCafeteria: "Kopte")
+            
+        // menampilkan halaman shoping cart jika memasukkan huruf "s" kapital maupun bukan
+        case "s", "S":
+            falseInput = 0
+            print("Here's your shopping cart :)")
+            cart.show()
+
+        // keluar dari program jika memasukkan huruf "q" kapital maupun bukan
+        case "q","Q":
+            falseInput = 0
+            print("See u next time! :)")
+            exit(0)
+            
+        // jika selain dari opsi di atas, maka panggil fungsi ini lagi
+        default:
+            falseInput += 1
+            print("""
+                Please Input from the option bellow!
+            """)
+        }
+    }while falseInput > 0
 }
     
-repeat{
-    print("""
-    Welcome to UC-Walk Cafeteria
-    Please choose cafeteria:
 
-    [1] Tuku-Tuku
-    [2] Gotri
-    [3] Madam Lie
-    [4] Kopte
-
-    [S]hopping Cart
-    [Q]uit
-    """)
-
-    print("Your cafeteria choice?")
-
-    //ambil yang user input
-    let cafeteriaInput = readLine()!
-
-    // opsi untuk mengarahkan user dari inputnya
-    switch cafeteriaInput {
-        
-    // menampilkan halaman Tuku-tuku
-    case "1":
-        falseInput = 0
-        print("Choosing Tuku-Tuku...")
-        print()
-        cafeteria.inCafeteria(nameCafeteria: "Tuku-tuku")
-
-    // menampilkan halaman Gotri
-    case "2":
-        falseInput = 0
-        print("Choosing Gotri...")
-        print()
-        cafeteria.inCafeteria(nameCafeteria: "Gotri")
-
-    // menampilkan halaman Madam Lie
-    case "3":
-        falseInput = 0
-        print("Choosing Madam Lie...")
-        print()
-        cafeteria.inCafeteria(nameCafeteria: "Madam Lie")
-        
-    // menampilkan halaman Kopte
-    case "4":
-        falseInput = 0
-        print("Choosing Kopte...")
-        print()
-        cafeteria.inCafeteria(nameCafeteria: "Kopte")
-        
-    // menampilkan halaman shoping cart jika memasukkan huruf "s" kapital maupun bukan
-    case "s", "S":
-        falseInput = 0
-        print("Here's your shopping cart :)")
-        cart.show()
-
-    // keluar dari program jika memasukkan huruf "q" kapital maupun bukan
-    case "q","Q":
-        falseInput = 0
-        print("See u next time! :)")
-        exit(0)
-        
-    // jika selain dari opsi di atas, maka panggil fungsi ini lagi
-    default:
-        falseInput += 1
-        print("""
-            Please Input from the option bellow!
-        """)
-    }
-}while falseInput > 0
 
     
 //}

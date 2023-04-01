@@ -322,13 +322,12 @@ public class Cafeteria{
 //                          "Teh Kundur": 13000,
 //                          "Teh Jeruk Nipis":12500,
 //                          "Milo Dinosaur":14000]
-    
         
-        let menuList = Array<Menu>()
+//        let menuList = Array<Menu>()
         
-        print(menuList)
+        item.fixMenu()
         
-        for m in menuList{
+        for m in item.menuList{
             if(m.nameCafeteria == nameCafeteria && m.nameMenu == menu){
                 print("\(m.nameMenu) @ \(m.priceMenu)")
                 cart.calculateOrder(nameOfMenu: m.nameCafeteria, price: m.priceMenu, nameOfCafeteria: m.nameCafeteria)

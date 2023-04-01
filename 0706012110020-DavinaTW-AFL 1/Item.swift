@@ -72,7 +72,8 @@ class Item: Menu{
         gotriAyamGeprekDada.nameMenu = "Ayam Geprek Dada"
         gotriAyamGeprekDada.priceMenu = "11000"
         menuList.append(gotriAyamGeprekDada)
+        
+//        print("\(menuList) di dalem function")
     }
-    
     
 }
