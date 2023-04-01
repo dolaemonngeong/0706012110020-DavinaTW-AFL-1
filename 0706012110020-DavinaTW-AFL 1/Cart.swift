@@ -18,20 +18,25 @@ public class Cart{
         if itemList.isEmpty{
             print("Your cart is empty. :(")
             //memanggil fungsi untuk menampilkan halaman utama
-//            mainDisplay()
+            mainDisplay()
         }else{
+            print(itemList)
 
             // pengulangan jika user salah memasukkan input yang disediakan
             repeat {
                 
                 //loop untuk menampilkan pesanan user dari dictionary cafeteriaChoosen
                 for i in itemList{
-                    if(itemList.isEmpty){
-                        print("Sorry it's empty")
-                    }else{
+                    if(i.nameCafeteria == "Tuku-tuku"){
                         print("Your order from \(i.nameCafeteria) :")
                         print("- \(i.nameMenu) x\(i.amountInt)")
                     }
+                    if(i.nameCafeteria == "Gotri"){
+                        print("Your order from \(i.nameCafeteria) :")
+                        print("- \(i.nameMenu) x\(i.amountInt)")
+                    }
+
+                    //}
                     // cek jika user memesan di Tuku-tuku, maka tampilkan nama cefeterianya (Tuku-tuku), serta nama menu & jumlah yang dipesan di Tuku-Tuku
 //                    if(cafeteriaName == "Tuku-tuku"){
 //                        print("Your order from \(cafeteriaName) :")
@@ -87,18 +92,25 @@ public class Cart{
             
             if let amountMenuString = readLine(), let amountMenuInt = Int(amountMenuString) {
                 num = amountMenuInt
+//                print("in the if")
                 
-                for i in itemList{
-                    if(i.nameMenu == nameOfMenu){
-                        i.amountInt += amountMenuInt
-                    }else{
-                        i.amountInt = amountMenuInt
-                        i.nameMenu = nameOfMenu
-                        i.nameCafeteria = nameOfCafeteria
-                        i.item_id += 1
-                        itemList.append(i)
+                if(itemList.isEmpty == false){
+                    for i in itemList{
+                        print("in the loop")
+                        if(i.nameMenu == nameOfMenu){
+                            print("update begin")
+                            i.amountInt += amountMenuInt
+                            print("update finish")
+                        }else{
+                            print("is empty false")
+                            addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
+                        }
                     }
+                }else{
+                    print("")
+                    addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
                 }
+                
                 
                 //jika user memilih Tuku-tuku
 //                if nameCafeteria == "Tuku-tuku"{
@@ -136,6 +148,17 @@ public class Cart{
             }
         }
         
+    }
+    
+    func addItem(amountMenuInt: Int, nameOfMenu: String, nameOfCafeteria: String){
+//        print("new item begin")
+        let newItem = Item()
+        newItem.amountInt = amountMenuInt
+        newItem.nameMenu = nameOfMenu
+        newItem.nameCafeteria = nameOfCafeteria
+        newItem.item_id += 1
+        itemList.append(newItem)
+//        print("new item finish \(newItem.nameMenu)")
     }
     
     func checkOut(){

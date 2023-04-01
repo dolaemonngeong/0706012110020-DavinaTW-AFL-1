@@ -67,11 +67,17 @@ class Item: Menu{
         tuku2AirMineral.priceMenu = "3000"
         menuList.append(tuku2AirMineral)
         
-        let gotriAyamGeprekDada = Menu()
-        gotriAyamGeprekDada.nameCafeteria = "Tuku-tuku"
-        gotriAyamGeprekDada.nameMenu = "Ayam Geprek Dada"
-        gotriAyamGeprekDada.priceMenu = "11000"
-        menuList.append(gotriAyamGeprekDada)
+        let gotriNasiBakar = Menu()
+        gotriNasiBakar.nameCafeteria = "Gotri"
+        gotriNasiBakar.nameMenu = "Nasi Bakar"
+        gotriNasiBakar.priceMenu = "13000"
+        menuList.append(gotriNasiBakar)
+        
+        let gotriNasiGoreng = Menu()
+        gotriNasiGoreng.nameCafeteria = "Gotri"
+        gotriNasiGoreng.nameMenu = "Nasi Goreng"
+        gotriNasiGoreng.priceMenu = "13500"
+        menuList.append(gotriNasiGoreng)
         
 //        print("\(menuList) di dalem function")
     }

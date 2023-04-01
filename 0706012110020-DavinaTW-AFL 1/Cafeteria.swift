@@ -330,7 +330,7 @@ public class Cafeteria{
         for m in item.menuList{
             if(m.nameCafeteria == nameCafeteria && m.nameMenu == menu){
                 print("\(m.nameMenu) @ \(m.priceMenu)")
-                cart.calculateOrder(nameOfMenu: m.nameCafeteria, price: m.priceMenu, nameOfCafeteria: m.nameCafeteria)
+                cart.calculateOrder(nameOfMenu: m.nameMenu, price: m.priceMenu, nameOfCafeteria: m.nameCafeteria)
             }
         }
         
