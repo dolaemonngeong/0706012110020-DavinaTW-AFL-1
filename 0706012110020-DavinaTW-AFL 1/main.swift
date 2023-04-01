@@ -32,7 +32,7 @@ var cafeteriaChoosen: [String : String] = [:]
 
 // variabel input cafeteria dari user
 var cafeteriaInput: String = ""
-
+var t: String = ""
 //panggil fungsi main display untuk menampilkan halaman utamanya
 mainDisplay()
 
