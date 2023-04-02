@@ -26,27 +26,18 @@ public class Cart{
             repeat {
                 
                 //loop untuk menampilkan pesanan user dari dictionary cafeteriaChoosen
-                for i in itemList{
-                    if(i.nameCafeteria == "Tuku-tuku"){
-                        print("Your order from \(i.nameCafeteria) :")
-                        print("- \(i.nameMenu) x\(i.amountInt)")
-                    }
-                    if(i.nameCafeteria == "Gotri"){
-                        print("Your order from \(i.nameCafeteria) :")
-                        print("- \(i.nameMenu) x\(i.amountInt)")
-                    }
+                // Group the items by cafeteria
+                let groupedItems = Dictionary(grouping: itemList, by: { $0.nameCafeteria })
 
-                    //}
-                    // cek jika user memesan di Tuku-tuku, maka tampilkan nama cefeterianya (Tuku-tuku), serta nama menu & jumlah yang dipesan di Tuku-Tuku
-//                    if(cafeteriaName == "Tuku-tuku"){
-//                        print("Your order from \(cafeteriaName) :")
-//                        for (nama, jumlah) in ordersTuku2{
-//                            print("- \(nama) x \(jumlah)")
-//                        }
-//                    }
-                    
-                    
+                // Print the order details for each group
+                for (cafeteria, items) in groupedItems {
+                    print("Your order from \(cafeteria):")
+                    for item in items {
+                        print("- \(item.nameMenu) x\(item.amountInt)")
+                    }
                 }
+
+//                var sameName = false
                 
                 print("""
                         
@@ -92,56 +83,32 @@ public class Cart{
             
             if let amountMenuString = readLine(), let amountMenuInt = Int(amountMenuString) {
                 num = amountMenuInt
-//                print("in the if")
                 
                 if(itemList.isEmpty == false){
-                    for i in itemList{
-                        print("in the loop")
-                        if(i.nameMenu == nameOfMenu){
+                    var foundItem = false
+                    for i in itemList where i.nameMenu == nameOfMenu && i.nameCafeteria == nameOfCafeteria{
+                            foundItem = true
                             print("update begin")
                             i.amountInt += amountMenuInt
                             print("update finish")
-                        }else{
-                            print("is empty false")
-                            addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
-                        }
                     }
+                    if(foundItem ==  false){
+                        addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
+                    }
+
                 }else{
-                    print("")
+                    print("1st new")
                     addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
                 }
                 
-                
-                //jika user memilih Tuku-tuku
-//                if nameCafeteria == "Tuku-tuku"{
-//                    //jika user sudah memesan menu sebelumnya, maka tambahkan jumlahnya. jika belum, masukkan jumlahnya
-//                    if ordersTuku2[menu] != nil{
-//                        ordersTuku2[menu]! += amountMenuInt
-//                    }else{
-//                        ordersTuku2[menu] = amountMenuInt
-//                    }
-//
-//                }else if nameCafeteria == "Madam Lie"{
-//                    //jika user sudah memesan menu sebelumnya, maka tambahkan jumlahnya. jika belum, masukkan jumlahnya
-//                    if ordersMadamLie[menu] != nil{
-//                        ordersMadamLie[menu]! += amountMenuInt
-//                    }else{
-//                        ordersMadamLie[menu] = amountMenuInt
-//                    }
-//                }
-                
-                // loop untuk total seluruh pesanan user
-//                for (name, price) in priceMenuCafeteria{
-//                    if menu == name{
                 total += Int(price)! * amountMenuInt
-//                    }
-//                }
                 
                 print("Thank you for ordering. :)")
                 print("")
                 
                 //memanggil fungsi inCafeteria untuk menampilkan menu cafeteria yang sudah dipilih sebelumnya
                 cafeteria.inCafeteria(nameCafeteria: nameOfCafeteria)
+                
             } else {
                 print("Invalid input. Please enter a number!")
                 print("")
@@ -158,6 +125,7 @@ public class Cart{
         newItem.nameCafeteria = nameOfCafeteria
         newItem.item_id += 1
         itemList.append(newItem)
+        print(itemList.description)
 //        print("new item finish \(newItem.nameMenu)")
     }
     

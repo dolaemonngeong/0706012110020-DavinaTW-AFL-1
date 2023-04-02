@@ -326,6 +326,7 @@ public class Cafeteria{
 //        let menuList = Array<Menu>()
         
         item.fixMenu()
+        print(menu)
         
         for m in item.menuList{
             if(m.nameCafeteria == nameCafeteria && m.nameMenu == menu){

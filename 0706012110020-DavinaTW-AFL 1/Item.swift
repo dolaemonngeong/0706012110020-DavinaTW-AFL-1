@@ -79,6 +79,62 @@ class Item: Menu{
         gotriNasiGoreng.priceMenu = "13500"
         menuList.append(gotriNasiGoreng)
         
+        let gotriMieGoreng = Menu()
+        gotriMieGoreng.nameCafeteria = "Gotri"
+        gotriMieGoreng.nameMenu = "Mie Goreng"
+        gotriMieGoreng.priceMenu = "14000"
+        menuList.append(gotriMieGoreng)
+        
+        let gotriTamieGoreng = Menu()
+        gotriTamieGoreng.nameCafeteria = "Gotri"
+        gotriTamieGoreng.nameMenu = "Tamie Goreng"
+        gotriTamieGoreng.priceMenu = "15000"
+        menuList.append(gotriTamieGoreng)
+        
+        let gotriMilkshake = Menu()
+        gotriMilkshake.nameCafeteria = "Gotri"
+        gotriMilkshake.nameMenu = "Milkshake"
+        gotriMilkshake.priceMenu = "10000"
+        menuList.append(gotriMilkshake)
+        
+        let gotriTahuBerintik = Menu()
+        gotriTahuBerintik.nameCafeteria = "Gotri"
+        gotriTahuBerintik.nameMenu = "Tahu Berintik"
+        gotriTahuBerintik.priceMenu = "9000"
+        menuList.append(gotriTahuBerintik)
+        
+        let madamlieAGDada = Menu()
+        madamlieAGDada.nameCafeteria = "Madam Lie"
+        madamlieAGDada.nameMenu = "Ayam Geprek Dada"
+        madamlieAGDada.priceMenu = "11000"
+        menuList.append(madamlieAGDada)
+        
+        let madamlieAGPaha = Menu()
+        madamlieAGPaha.nameCafeteria = "Madam Lie"
+        madamlieAGPaha.nameMenu = "Ayam Geprek Paha"
+        madamlieAGPaha.priceMenu = "11000"
+        menuList.append(madamlieAGPaha)
+        
+        let madamlieNasiPutih = Menu()
+        madamlieNasiPutih.nameCafeteria = "Madam Lie"
+        madamlieNasiPutih.nameMenu = "Nasi Putih"
+        madamlieNasiPutih.priceMenu = "6000"
+        menuList.append(madamlieNasiPutih)
+        
+        let madamlieTehTawar = Menu()
+        madamlieTehTawar.nameCafeteria = "Madam Lie"
+        madamlieTehTawar.nameMenu = "Teh Tawar"
+        madamlieTehTawar.priceMenu = "5000"
+        menuList.append(madamlieTehTawar)
+        
+        let madamlieJerukManis = Menu()
+        madamlieJerukManis.nameCafeteria = "Madam Lie"
+        madamlieJerukManis.nameMenu = "Jeruk Manis"
+        madamlieJerukManis.priceMenu = "5500"
+        menuList.append(madamlieJerukManis)
+        
+        
+        //tinggal yg kopte
 //        print("\(menuList) di dalem function")
     }
     
