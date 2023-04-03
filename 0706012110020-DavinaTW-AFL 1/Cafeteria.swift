@@ -293,11 +293,11 @@ public class Cafeteria{
     }
     
     func orderMenu(menu: String, nameCafeteria: String){
-        // menampilkan harga menu di sebuah cafeteria sebelum user pesan
-        
+
+        //memangguk fungsi menu agar array tidak kosong
         item.fixMenu()
-        print(menu)
         
+        // menampilkan harga menu di sebuah cafeteria sebelum user pesan dengan loop untuk cek manakah nama menu yang dimaksud dari atribut nama menu dan nama cafeteria
         for m in item.menuList{
             if(m.nameCafeteria == nameCafeteria && m.nameMenu == menu){
                 print("\(m.nameMenu) @ \(m.priceMenu)")

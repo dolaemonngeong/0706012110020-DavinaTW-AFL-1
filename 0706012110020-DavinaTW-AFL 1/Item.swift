@@ -16,6 +16,7 @@ class Item: Menu{
     var menuList = Array<Menu>()
     
     func fixMenu() {
+        //menambah nama cafeteria, nama menu, dan harga menu
         
         let tuku2TahuIsi = Menu()
         tuku2TahuIsi.nameCafeteria = "Tuku-tuku"

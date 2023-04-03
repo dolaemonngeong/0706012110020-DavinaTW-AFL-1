@@ -37,7 +37,6 @@ public class Cart{
                     }
                 }
 
-//                var sameName = false
                 
                 print("""
                         
@@ -82,21 +81,29 @@ public class Cart{
             if let amountMenuString = readLine(), let amountMenuInt = Int(amountMenuString) {
                 num = amountMenuInt
                 
+                //jika user sudah pesan sebelumnya
                 if(itemList.isEmpty == false){
+                    //variabel yang membantu jika ditemukan ada nama menu dan nama cafeteria yang sama
                     var foundItem = false
+                    
+                    //mengecek apakah nama menu dan nama cafeteria ada yang sama.
                     for i in itemList where i.nameMenu == nameOfMenu && i.nameCafeteria == nameOfCafeteria{
-                            foundItem = true
-                            i.amountInt += amountMenuInt
+                        foundItem = true
+                        i.amountInt += amountMenuInt
                     }
+                    
+                    //jika tidak ditemukan ada kesamaan nama menu dan nama cefeteria
                     if(foundItem ==  false){
+                        //memanggil fungsi yang dapat menambah pesanan user
                         addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
                     }
 
                 }else{
-                    print("1st new")
+                    //memanggil fungsi yang dapat menambah pesanan user
                     addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
                 }
                 
+                //menghitung total yang dihabiskan user
                 total += Int(price)! * amountMenuInt
                 
                 print("Thank you for ordering. :)")
@@ -114,7 +121,8 @@ public class Cart{
     }
     
     func addItem(amountMenuInt: Int, nameOfMenu: String, nameOfCafeteria: String){
-//        print("new item begin")
+        // membuat objek Item baru
+        
         let newItem = Item()
         newItem.amountInt = amountMenuInt
         newItem.nameMenu = nameOfMenu
