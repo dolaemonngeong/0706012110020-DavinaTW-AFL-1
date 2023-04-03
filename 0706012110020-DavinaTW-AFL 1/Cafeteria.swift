@@ -295,36 +295,6 @@ public class Cafeteria{
     func orderMenu(menu: String, nameCafeteria: String){
         // menampilkan harga menu di sebuah cafeteria sebelum user pesan
         
-        //dictionary harga menu di Tuku-tuku
-//        let priceTuku2 = ["Tahu Isi" : 5_000,
-//                          "Nasi Kuning" : 15_000,
-//                          "Nasi Campur" : 16_000,
-//                          "Air Mineral" : 3_000]
-//
-//        //dictionary harga menu di Madam Lie
-//        let priceMadamLie = ["Ayam Geprek Dada": 11_000,
-//                             "Ayam Geprek Paha": 11_000,
-//                             "Nasi Putih": 6_000,
-//                             "Teh Tawar": 5_000,
-//                             "Jeruk Manis": 5_500]
-//
-//        //dictionary harga menu di Gotri
-//        let priceGotri = ["Nasi Bakar": 13_000,
-//                          "Nasi Goreng":13_500,
-//                          "Mie Goreng":14_000,
-//                          "Tamie Goreng":15_000,
-//                          "Milkshake": 10_000,
-//                          "Tahu Berintik":9_000]
-//
-//        //dictionary harga menu di Kopte
-//        let priceKopte = ["Teh Tarik Kopte": 15000,
-//                          "Coklat Tarik": 12000,
-//                          "Teh Kundur": 13000,
-//                          "Teh Jeruk Nipis":12500,
-//                          "Milo Dinosaur":14000]
-        
-//        let menuList = Array<Menu>()
-        
         item.fixMenu()
         print(menu)
         
@@ -335,50 +305,6 @@ public class Cafeteria{
             }
         }
         
-        //jika user memilih Tuku-tuku
-//        if nameCafeteria == "Tuku-tuku"{
-//
-//            // jika nama menu dari user input dan nama dari dictionary harga menu di Tuku-tuku sama, maka tampilkan dan panggil function untuk menghitung pesanannya
-//            for (name, price) in priceTuku2{
-//                if menu == name{
-//                    print("\(name) @ \(price)")
-//                    calculateOrder(menu: menu, priceMenuCafeteria: priceTuku2, nameCafeteria: nameCafeteria)
-//                }
-//            }
-//
-//        // jika user memilih Madam Lie
-//        }else if nameCafeteria == "Madam Lie"{
-//
-//            // jika nama menu dari user input dan nama dari dictionary harga menu di Madam Lie sama, maka tampilkan dan panggil function untuk menghitung pesanannya
-//            for (name, price) in priceMadamLie{
-//                if menu == name{
-//                    print("\(name) @ \(price)")
-//                    calculateOrder(menu: menu, priceMenuCafeteria: priceMadamLie, nameCafeteria: nameCafeteria)
-//                }
-//            }
-//
-//        // jika user memilih Gotri
-//        }else if nameCafeteria == "Gotri"{
-//
-//            // jika nama menu dari user input dan nama dari dictionary harga menu di Gotri sama, maka tampilkan dan panggil function untuk menghitung pesanannya
-//            for (name, price) in priceGotri{
-//                if menu == name{
-//                    print("\(name) @ \(price)")
-//                    calculateOrder(menu: menu, priceMenuCafeteria: priceGotri, nameCafeteria: nameCafeteria)
-//                }
-//            }
-//
-//        // jika user memilih Kopte
-//        }else if nameCafeteria == "Kopte"{
-//
-//            // jika nama menu dari user input dan nama dari dictionary harga menu di Kopte sama, maka tampilkan dan panggil function untuk menghitung pesanannya
-//            for (name, price) in priceKopte{
-//                if menu == name{
-//                    print("\(name) @ \(price)")
-//                    calculateOrder(menu: menu, priceMenuCafeteria: priceKopte, nameCafeteria: nameCafeteria)
-//                }
-//            }
-//        }
         
     }
 

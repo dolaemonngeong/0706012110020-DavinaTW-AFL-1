@@ -72,8 +72,6 @@ public class Cart{
     }
     
     func calculateOrder(nameOfMenu: String, price:String, nameOfCafeteria: String){
-//        var itemList = Array<Item>()
-//        var menuList = Array<Menu>()
         var num: Int?
         
         // pengulangan jika user tidak memasukkan angka
@@ -88,9 +86,7 @@ public class Cart{
                     var foundItem = false
                     for i in itemList where i.nameMenu == nameOfMenu && i.nameCafeteria == nameOfCafeteria{
                             foundItem = true
-                            print("update begin")
                             i.amountInt += amountMenuInt
-                            print("update finish")
                     }
                     if(foundItem ==  false){
                         addItem(amountMenuInt: amountMenuInt, nameOfMenu: nameOfMenu, nameOfCafeteria: nameOfCafeteria)
@@ -126,7 +122,6 @@ public class Cart{
         newItem.item_id += 1
         itemList.append(newItem)
         print(itemList.description)
-//        print("new item finish \(newItem.nameMenu)")
     }
     
     func checkOut(){

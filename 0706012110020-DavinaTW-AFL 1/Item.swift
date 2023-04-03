@@ -9,32 +9,6 @@ import Foundation
 
 class Item: Menu{
     
-//    let priceTuku2 = ["Tahu Isi" : 5_000,
-//                      "Nasi Kuning" : 15_000,
-//                      "Nasi Campur" : 16_000,
-//                      "Air Mineral" : 3_000]
-//
-//    //dictionary harga menu di Madam Lie
-//    let priceMadamLie = ["Ayam Geprek Dada": 11_000,
-//                         "Ayam Geprek Paha": 11_000,
-//                         "Nasi Putih": 6_000,
-//                         "Teh Tawar": 5_000,
-//                         "Jeruk Manis": 5_500]
-//
-//    //dictionary harga menu di Gotri
-//    let priceGotri = ["Nasi Bakar": 13_000,
-//                      "Nasi Goreng":13_500,
-//                      "Mie Goreng":14_000,
-//                      "Tamie Goreng":15_000,
-//                      "Milkshake": 10_000,
-//                      "Tahu Berintik":9_000]
-//
-//    //dictionary harga menu di Kopte
-//    let priceKopte = ["Teh Tarik Kopte": 15000,
-//                      "Coklat Tarik": 12000,
-//                      "Teh Kundur": 13000,
-//                      "Teh Jeruk Nipis":12500,
-//                      "Milo Dinosaur":14000]
     
     
     var item_id :Int = 0
@@ -132,10 +106,36 @@ class Item: Menu{
         madamlieJerukManis.nameMenu = "Jeruk Manis"
         madamlieJerukManis.priceMenu = "5500"
         menuList.append(madamlieJerukManis)
+ 
+        let kopteTehTarik = Menu()
+        kopteTehTarik.nameCafeteria = "Kopte"
+        kopteTehTarik.nameMenu = "Teh Tarik Kopte"
+        kopteTehTarik.priceMenu = "15000"
+        menuList.append(kopteTehTarik)
         
+        let kopteCoklatTarik = Menu()
+        kopteCoklatTarik.nameCafeteria = "Kopte"
+        kopteCoklatTarik.nameMenu = "Coklat Tarik"
+        kopteCoklatTarik.priceMenu = "12000"
+        menuList.append(kopteCoklatTarik)
         
-        //tinggal yg kopte
-//        print("\(menuList) di dalem function")
+        let kopteTehKundur = Menu()
+        kopteTehKundur.nameCafeteria = "Kopte"
+        kopteTehKundur.nameMenu = "Teh Kundur"
+        kopteTehKundur.priceMenu = "13000"
+        menuList.append(kopteTehKundur)
+        
+        let kopteTehJerukNipis = Menu()
+        kopteTehJerukNipis.nameCafeteria = "Kopte"
+        kopteTehJerukNipis.nameMenu = "Teh Jeruk Nipis"
+        kopteTehJerukNipis.priceMenu = "12500"
+        menuList.append(kopteTehJerukNipis)
+        
+        let kopteMiloDinosaur = Menu()
+        kopteMiloDinosaur.nameCafeteria = "Kopte"
+        kopteMiloDinosaur.nameMenu = "Milo Dinosaur"
+        kopteMiloDinosaur.priceMenu = "15000"
+        menuList.append(kopteMiloDinosaur)
     }
     
 }
