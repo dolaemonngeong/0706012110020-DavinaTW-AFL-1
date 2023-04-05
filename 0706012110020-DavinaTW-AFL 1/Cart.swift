@@ -16,7 +16,11 @@ public class Cart{
         
         // cek jika user belum pesan di sebuah cafeteria dari dictionary cafeteriaChoosen yang berisi angka & nama cafeteria
         if itemList.isEmpty{
-            print("Your cart is empty. :(")
+            print("""
+                
+                Your cart is empty. :(
+                
+                """)
             //memanggil fungsi untuk menampilkan halaman utama
             mainDisplay()
         }else{
@@ -156,6 +160,7 @@ public class Cart{
                 falseInput += 1
                 print("Please enter a valid amount.")
             }else {
+                //mengahpus seluruh arraylist bernama itemList untuk menandakan bahwa user sudah membayarnya
                 itemList.removeAll()
                 falseInput = 0
             }
@@ -172,6 +177,8 @@ public class Cart{
                 """)
             
             let backMainScreen: String = readLine()!
+            
+            total = 0
             
             if(backMainScreen == "y" || backMainScreen == "Y"){
                 falseInput = 0
