@@ -12,4 +12,5 @@ class Menu{
     var priceMenu: String = ""
     var nameCafeteria: String = ""
     
+    
 }

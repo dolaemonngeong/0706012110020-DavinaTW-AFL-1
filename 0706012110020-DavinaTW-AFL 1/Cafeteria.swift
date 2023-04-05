@@ -7,14 +7,18 @@
 
 import Foundation
 
-public class Cafeteria{
+protocol Cafeteria{
+    func insideTenant(nameCafeteria: String)
+    func orderMenu(menu: String, nameCafeteria: String)
+}
+
+struct ucWalk : Cafeteria{
     var cafeteriaInput: String = ""
     var nameCafeteria: String = ""
-    var choiceMenuInput: String = ""
     
    
     
-    func inCafeteria(nameCafeteria:String){
+    func insideTenant(nameCafeteria:String){
 
         // pengulangan jika user tidak memasukkan input sesuai opsi menu yang disediakan
         repeat{

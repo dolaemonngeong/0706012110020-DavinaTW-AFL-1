@@ -20,7 +20,7 @@ public class Cart{
             //memanggil fungsi untuk menampilkan halaman utama
             mainDisplay()
         }else{
-            print(itemList)
+//            print(itemList)
 
             // pengulangan jika user salah memasukkan input yang disediakan
             repeat {
@@ -110,7 +110,7 @@ public class Cart{
                 print("")
                 
                 //memanggil fungsi inCafeteria untuk menampilkan menu cafeteria yang sudah dipilih sebelumnya
-                cafeteria.inCafeteria(nameCafeteria: nameOfCafeteria)
+                ucwalk.insideTenant(nameCafeteria: nameOfCafeteria)
                 
             } else {
                 print("Invalid input. Please enter a number!")
@@ -129,7 +129,7 @@ public class Cart{
         newItem.nameCafeteria = nameOfCafeteria
         newItem.item_id += 1
         itemList.append(newItem)
-        print(itemList.description)
+//        print(itemList.description)
     }
     
     func checkOut(){
@@ -156,6 +156,7 @@ public class Cart{
                 falseInput += 1
                 print("Please enter a valid amount.")
             }else {
+                itemList.removeAll()
                 falseInput = 0
             }
         }while falseInput > 0

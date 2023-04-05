@@ -9,7 +9,7 @@ import Foundation
 
 var item = Item()
 var cart = Cart()
-var cafeteria = Cafeteria()
+var ucwalk = ucWalk()
 
 
 // variabel total seluruh pesanan di cafeteria
@@ -50,28 +50,28 @@ func mainDisplay(){
             falseInput = 0
             print("Choosing Tuku-Tuku...")
             print()
-            cafeteria.inCafeteria(nameCafeteria: "Tuku-tuku")
+            ucwalk.insideTenant(nameCafeteria: "Tuku-tuku")
 
         // menampilkan halaman Gotri
         case "2":
             falseInput = 0
             print("Choosing Gotri...")
             print()
-            cafeteria.inCafeteria(nameCafeteria: "Gotri")
+            ucwalk.insideTenant(nameCafeteria: "Gotri")
 
         // menampilkan halaman Madam Lie
         case "3":
             falseInput = 0
             print("Choosing Madam Lie...")
             print()
-            cafeteria.inCafeteria(nameCafeteria: "Madam Lie")
+            ucwalk.insideTenant(nameCafeteria: "Madam Lie")
             
         // menampilkan halaman Kopte
         case "4":
             falseInput = 0
             print("Choosing Kopte...")
             print()
-            cafeteria.inCafeteria(nameCafeteria: "Kopte")
+            ucwalk.insideTenant(nameCafeteria: "Kopte")
             
         // menampilkan halaman shoping cart jika memasukkan huruf "s" kapital maupun bukan
         case "s", "S":
