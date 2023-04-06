@@ -9,7 +9,7 @@ import Foundation
 
 var item = Item()
 var cart = Cart()
-var ucwalk = ucWalk()
+var ucwalk = UCWalk()
 
 
 // variabel total seluruh pesanan di cafeteria
